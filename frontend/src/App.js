@@ -5,12 +5,14 @@ import PlaceDetails from './Components/PlaceDetails';
 import Footer from './Components/footer';
 import PlaceD from './Components/PlaceD';
 import Signing from './Components/sign';
+import EventPage from './Components/Events';
+import MyAccount from './Components/Myaccount';
 
 function App() {
   return (
     <div>
     <Navbar />
-    <PlaceDetails/>
+    <MyAccount/>
     <Footer/>
   </div>
   );
