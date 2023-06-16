@@ -856,7 +856,7 @@ const PlaceDetails = () => {
             {/*for the  comments*/}
             <div>
               {/*Works if q-authenticated*/}
-              {!authenticated && (
+              {authenticated && (
                 <div>
 
                   <h4 className="text-6xl font-semibold mb-10">   <FontAwesomeIcon
