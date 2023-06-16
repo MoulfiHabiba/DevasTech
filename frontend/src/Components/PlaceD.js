@@ -779,7 +779,27 @@ const PlaceDetails = () => {
                             </h1>
                           </div>
                         </div>
-
+                        {currentSlideR !== 0 && (
+              <button
+                className=" absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-200 hover:bg-gray-300 rounded-full p-2 focus:outline-none"
+                onClick={handlePrevSlideR}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  className="h-5 w-5"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M15 19l-7-7 7-7"
+                  />
+                </svg>
+              </button>
+            )}
                         <div className="flex">
                           {Array.from({ length: review.rating }, (_, i) => (
                             <svg
