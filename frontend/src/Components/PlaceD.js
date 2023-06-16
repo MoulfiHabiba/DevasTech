@@ -196,7 +196,6 @@ const PlaceDetails = () => {
       comment:
         "C'est un endroit où l'on peut se perdre pendant des heures, en découvrant de nouvelles surprises à chaque coin de rue.",
     },
-    // Add more reviews as needed
   ];
   const [currentSlideR, setCurrentSlideR] = useState(0);
   const slidesToShow = 6;
@@ -246,12 +245,7 @@ const PlaceDetails = () => {
     }));
   };
 
-  const AddReview = () => {
-    // Add newReview to the list of reviews
-    // ... You can implement the logic to add the review to your data source or update the state
-    console.log(newReview);
-    setNewReview({ name: "", rating: 0, comment: "", title:"" });
-  };
+  
   let fav = false;
   const handleInputChange = (e) => {
     setNewReview((prevReview) => ({
@@ -260,12 +254,6 @@ const PlaceDetails = () => {
     }));
   };
 
-  const handleAddReview = () => {
-    // Add newReview to the list of reviews
-    // ... You can implement the logic to add the review to your data source or update the state
-    console.log(newReview);
-    setNewReview({ name: "", rating: 0, comment: "" });
-  };
   //Events slider generator
   const [currentSlideN, setCurrentSlideN] = useState(0);
 
@@ -759,7 +747,7 @@ const PlaceDetails = () => {
                 </h1>
                 <div className="flex mb-8 justify-normal relative  rounded-lg">
                   <div className="flex space-x-4">
-                    {reviews.map((review, indexR) => (
+                    {displayReviews.map((review, indexR) => (
                       <div
                         key={indexR}
                         className="bg-opacity-10 bg-white rounded-2xl p-4 space-y-2 w-90 h-90  border border-grey-400 rounded-lg shadow hover:bg-gray-100"
