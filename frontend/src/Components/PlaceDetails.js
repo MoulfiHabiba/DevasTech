@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 //import Images from "../Images";
 import myImage from "../Images/pic1.jpg";
@@ -10,7 +10,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import StarRating from "./Rating";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCalendarDay, faClock, faCommenting, faHeart, faLocationDot, faNewspaper } from "@fortawesome/free-solid-svg-icons";
+import { faCalendarDay, faClock, faCommenting, faHeart, faLocationDot, faLongArrowAltDown, faNewspaper } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartRegular } from "@fortawesome/free-regular-svg-icons";
 
 
@@ -193,6 +193,9 @@ const PlaceDetails = () => {
     return element / reviews.length;
   };
 
+
+ // 36°46'23.7,3°03'30.7
+ 
   /*function addNewComment(id,user) {
 			API.post('/favoris/',{
 				"user":2,
@@ -214,7 +217,19 @@ const PlaceDetails = () => {
     rating: 0,
     comment: "",
   });
-
+  //used for maps
+  //not this
+  const long ="3°03'30.7";
+  const latit ="36°46'23.7";
+  //but this
+  const latitude = '36°46\'23.7';
+  const longitude = '3°03\'32.8';
+  
+  const encodedLatitude = encodeURIComponent(latitude);
+  const encodedLongitude = encodeURIComponent(longitude);
+  
+  const url = `https://maps.google.com/maps?q=${encodedLatitude},${encodedLongitude}&hl=es&z=14&output=embed`;
+  
   const ReviewChanges = (e) => {
     setNewReview((prevReview) => ({
       ...prevReview,
@@ -278,6 +293,7 @@ const PlaceDetails = () => {
   const displayEvents = events.slice(startSlide, endSlide);
   const avRate = calculateRate(reviews);
   const [Fav, setFav] = useState(false);
+
 
   const addToFav = () => {
     setFav(!Fav);
@@ -397,7 +413,10 @@ const PlaceDetails = () => {
                 <div  style={{ backgroundColor: "rgba(240, 240, 250, 0.1)" }} className=" py-15 property-details-google-map  mb-16 block  rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
                   <iframe
                     id="map"
-                    src="https://maps.google.com/maps?q=36°46'23.7,3°03'30.7&hl=es&z=14&amp;output=embed"
+                    
+                    //</div></div>src = {`https://maps.google.com/maps?q=${latit},${long}&hl=es&z=14&amp;output=embed`}
+                   src= {url}
+                    //src="https://maps.google.com/maps?q=36°46'23.7,3°03'30.7&hl=es&z=14&amp;output=embed"
                     width="100%"
                     height="470px"
                     allowFullScreen
