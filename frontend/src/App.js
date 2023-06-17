@@ -10,9 +10,8 @@ import MyAccount from './Components/Myaccount';
 
 function App() {
   return (
-    <div>
-    <Navbar />
-    <MyAccount/>
+    <div >
+    <PlaceD/>
     <Footer/>
   </div>
   );

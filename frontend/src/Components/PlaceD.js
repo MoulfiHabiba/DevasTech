@@ -298,7 +298,12 @@ const PlaceDetails = () => {
 
   return (
     //wraps all of them
-    <div>
+    <div  /* style={{
+      backgroundImage: `url(${placePictures.at(0)})`,
+      backgroundSize: "cover",
+      backdropFilter: "blur(100px)",
+        WebkitBackdropFilter: "blur(100px)",
+    }}*/>
       <div className="px-8 py-2">
         {/*for the pictures and the information */}
         <div>

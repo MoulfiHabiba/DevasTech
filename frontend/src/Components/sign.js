@@ -17,7 +17,8 @@ function Signing() {
   };
 
   return (
-    <div className="blurry-background">
+    <div className="blurry-background" >
+    <div >
       <div
         style={{ backgroundColor: "rgba(248, 248, 255, 0.9)" }}
         className=" mt-24 bg-white-100 w-full rounded-3xl lg:w-3/5 xl:w-3/5 px-14  lg:mb-20 max-w-3xl mx-auto pt-20 pb-24 bg-white rounded-4xl shadow-2xl "
@@ -226,7 +227,7 @@ function Signing() {
           </form>
         )}
       </div>
-    </div>
+    </div></div>
   );
 }
 
