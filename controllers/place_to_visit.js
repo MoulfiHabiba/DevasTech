@@ -9,7 +9,7 @@ export const addPlaceToVisit = (req, res) => {
     if (err) return res.status(403).json("Token is not valid!");
 
     const q =
-      "INSERT INTO place_to_visit(`title`, `description`, `location`, `category`, `theme`,`access_hours`,`transport_info`,`history`,`responsible_id`) VALUES (?)";
+      "INSERT INTO place_to_visit(`title`, `description`, `location`, `category`, `theme`,`access_hours`,`transport_info`,`history`,`longtitude`,`latitude`,`responsible_id`) VALUES (?)";
 
     const values = [
       req.body.title,
@@ -20,6 +20,8 @@ export const addPlaceToVisit = (req, res) => {
       req.body.access_hours,
       req.body.transport_info,
       req.body.history,
+      req.body.longtitude,
+      req.body.latitude,
       userInfo.id,
     ];
 
@@ -76,6 +78,8 @@ export const getAllPlacesToVisitWithFirstImage = (req, res) => {
       transport_info: item.transport_info,
       history: item.history,
       responsible_id: item.responsible_id,
+      longtitude : item.longtitude,
+      latitude : item.latitude,
       image_url: item.image_url, // First image URL
     }));
 
@@ -157,6 +161,8 @@ export const getSinglePlacesToVisit = (req, res) => {
       transport_info: results[0].transport_info,
       history: results[0].history,
       responsible_id: results[0].responsible_id,
+      longtitude: results[0].longtitude,
+      latitude: results[0].latitude,
       images: results.map(result => ({
         id: result.imageId,
         url: result.url
@@ -261,6 +267,8 @@ export const addEvent = (req, res) => {
       transport_info: item.transport_info,
       history: item.history,
       responsible_id: item.responsible_id,
+      longtitude : item.longtitude,
+      latitude : item.latitude,
       image_url: item.image_url, // First image URL
     }));
 
@@ -378,6 +386,8 @@ export const addEvent = (req, res) => {
         transport_info: item.transport_info,
         history: item.history,
         responsible_id: item.responsible_id,
+        longtitude : item.longtitude,
+        latitude : item.latitude,
         image_url: item.image_url, // First image URL
       }));
   
@@ -414,6 +424,8 @@ export const addEvent = (req, res) => {
           transport_info: item.transport_info,
           history: item.history,
           responsible_id: item.responsible_id,
+          longtitude : item.longtitude,
+          latitude : item.latitude,
           image_url: item.image_url, // First image URL
         }));
     
